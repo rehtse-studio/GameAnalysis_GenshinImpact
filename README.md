@@ -13,7 +13,7 @@ This Playable Character has a script [RS_PlayerController] that control is movem
 
 Player can be controlled by using Keyboard, Gamepad (tested with a Xbox, one Controller) and mobile input. 
 
-The camera can be controller by moving your finger on the right side of the screen, this input is being created by a script called _RS_TouchInputManager_ localed inside a UI canvas on the hierarchy: [--RS Mobile Input Asset Holder--] -> [--RS_Managers--] -> RS_MobileInputUI_Canvas, inside the canvas theres a panel that will receive the input from your finger, you can change the size of this panel as you wish. 
+The camera can be controller by moving your finger on the right side of the screen, this input is being created by a script called _RS_TouchInputManager_ localed inside a UI canvas on the hierarchy: [--RS Mobile Input Asset Holder--] -> [--RS_Managers--] -> RS_MobileInputUI_Canvas, inside the canvas theres a panel that will receive the input from your finger, you can change the size of this panel as you wish. Sensitivity of the camera speed can be control directly using the Cinemachine script or during play mode pressing the setting button on the top left of the screen.
 
 The [--RS Managers--] GameObject hold the _RS_InGameInputsManager_, the scripts is a singleton sharing the new Input System.
 
