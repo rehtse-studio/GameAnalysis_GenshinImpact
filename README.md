@@ -11,7 +11,7 @@ On this scene your going to have a Prefab of a Playable Character on the hierarc
 
 This Playable Character has a script [RS_PlayerController] that control is movements, speed and animation.  All Inputs are from the new Input System [RehtseStudio_InGameInputActionsMap].
 
-Player can be controlled by using Keybaord, Gamepad (tested with a Xbox one Controller) and mobile input. 
+Player can be controlled by using Keyboard, Gamepad (tested with a Xbox, one Controller) and mobile input. 
 
 The camera can be controller by moving your finger on the right side of the screen, this input is being created by a script called _RS_TouchInputManager_ localed inside a UI canvas on the hierarchy: [--RS Mobile Input Asset Holder--] -> [--RS_Managers--] -> RS_MobileInputUI_Canvas, inside the canvas theres a panel that will receive the input from your finger, you can change the size of this panel as you wish. 
 
@@ -21,4 +21,4 @@ Theres a special scripts for Cinemachine called _RS_CinemachineInputManager_ thi
 
 **Goal is to make new scene of different action players to have it be playable on mobile. If its to much then each scene will have a project on there own to have everything nice and clean**
 
-**Comment are welcomed**
+**Comments are welcomed**
