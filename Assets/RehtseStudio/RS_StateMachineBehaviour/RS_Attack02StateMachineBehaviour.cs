@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RehtseStudio.PlayerController;
+using RehtseStudio.PlayerAttackController;
 
 namespace RehtseStudio.AttackStateMachineBehaviour
 {
@@ -22,11 +22,14 @@ namespace RehtseStudio.AttackStateMachineBehaviour
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
         override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+
             _isPlayerAttackingBoolParameterAnim = Animator.StringToHash("isPlayerAttacking");
-            animator.SetBool(_isPlayerAttackingBoolParameterAnim, RS_PlayerController.Instance.IsPlayerAttacking());
+
+            animator.SetBool(_isPlayerAttackingBoolParameterAnim, RS_PlayerAttackController.Instance.IsPlayerAttacking());
 
             _attackTriggerParameterAnim = Animator.StringToHash("Attack_003");
-            if (RS_PlayerController.Instance.AttackClick() == 3)
+
+            if (RS_PlayerAttackController.Instance.AttackClick() == 3)
                 animator.SetTrigger(_attackTriggerParameterAnim);
         }
 

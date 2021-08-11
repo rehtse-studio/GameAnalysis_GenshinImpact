@@ -49,10 +49,12 @@ namespace RehtseStudio.CinemachineInputManager
             }
             else if(_rsMobileInputUICanvas.activeInHierarchy == true)
             {
+
                 if (axisName == TouchXInputMapTo)
                     return RS_TouchInputManager.Instance._rsTouchInputVector.x / _touchSensitivityX;
                 if (axisName == TouchYInputMapTo)
                     return RS_TouchInputManager.Instance._rsTouchInputVector.y / _touchSensitivityY;
+
             }        
 
             return Input.GetAxis(axisName);

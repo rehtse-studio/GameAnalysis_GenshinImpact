@@ -801,6 +801,7 @@ GameObject:
   - component: {fileID: 2668676764565942920}
   - component: {fileID: 2668676764565942927}
   - component: {fileID: 2668676764565942926}
+  - component: {fileID: 976650308591361999}
   m_Layer: 0
   m_Name: RS_ActionXbot
   m_TagString: Player
@@ -889,6 +890,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 5
+--- !u!114 &976650308591361999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2668676764565942925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696d058ea720fab40ba1f317a2483b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2795998891498754518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,7 +1145,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010764863314939690}
-  m_LocalRotation: {x: 0.045769464, y: -0.010099905, z: 0.0004627759, w: 0.9989009}
+  m_LocalRotation: {x: 0.045730185, y: 0.04567104, z: -0.0020929254, w: 0.9979071}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1332,7 +1345,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010764864511631804}
-  m_LocalRotation: {x: 0.022486238, y: -0.010107966, z: 0.00022735923, w: 0.999696}
+  m_LocalRotation: {x: 0.022470124, y: 0.045707416, z: -0.0010283865, w: 0.99870163}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1535,7 +1548,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010764864874322084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08366966, y: 1.97, z: -3.9991248}
+  m_LocalPosition: {x: -0.37792015, y: 1.9700003, z: -3.982107}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3010764863314939691}
@@ -1688,8 +1701,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rsMobileInputUICanvas: {fileID: 0}
-  _touchSensitivityX: 10
-  _touchSensitivityY: 10
+  _touchSensitivityX: 15
+  _touchSensitivityY: 15
 --- !u!1 &3010764864899297375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1714,7 +1727,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010764864899297375}
-  m_LocalRotation: {x: -0.0007084539, y: -0.010110501, z: -0.0000071631903, w: 0.9999487}
+  m_LocalRotation: {x: -0.00070149894, y: 0.045718975, z: 0.00003210539, w: 0.9989541}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
