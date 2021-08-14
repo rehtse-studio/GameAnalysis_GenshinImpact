@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RehtseStudio.PlayerAttackController;
+using RehtseStudio.PlayerAnimatorController;
 
 namespace RehtseStudio.AttackStateMachineBehaviour
 {
     public class RS_Attack01StateMachineBehaviour : StateMachineBehaviour
     {
+
         private int _isPlayerAttackingBoolParameterAnim;
         private int _attackTriggerParameterAnim;
 
@@ -24,11 +25,11 @@ namespace RehtseStudio.AttackStateMachineBehaviour
 
             _isPlayerAttackingBoolParameterAnim = Animator.StringToHash("isPlayerAttacking");
 
-            animator.SetBool(_isPlayerAttackingBoolParameterAnim, RS_PlayerAttackController.Instance.IsPlayerAttacking());
+            animator.SetBool(_isPlayerAttackingBoolParameterAnim, RS_PlayerAnimatorController.Instance.IsPlayerAttacking());
 
             _attackTriggerParameterAnim = Animator.StringToHash("Attack_002");
 
-            if (RS_PlayerAttackController.Instance.AttackClick() == 2)
+            if (RS_PlayerAnimatorController.Instance.AttackClick() == 2)
                 animator.SetTrigger(_attackTriggerParameterAnim);
 
         }

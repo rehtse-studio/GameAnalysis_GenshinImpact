@@ -119,9 +119,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1533392498}
   m_Direction: 0
   m_MinValue: 1
-  m_MaxValue: 10
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 5
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -367,9 +367,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1688414006}
   m_Direction: 0
   m_MinValue: 1
-  m_MaxValue: 10
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 5
+  m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1973,7 +1973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7353569882349106224
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2111,6 +2111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7353569882799669780}
   - component: {fileID: 7353569882799669782}
+  - component: {fileID: 4057155237140209944}
   m_Layer: 0
   m_Name: '[--RS_Managers--]'
   m_TagString: Untagged
@@ -2144,3 +2145,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa0f4a50e836334b8604111ed6f1558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &4057155237140209944
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353569882799669783}
+  m_Enabled: 1

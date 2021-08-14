@@ -4,10 +4,10 @@ using UnityEngine;
 using RehtseStudio.MonoSingleton;
 using RehtseStudio.InGameInputsManager;
 
-namespace RehtseStudio.PlayerAttackController
+namespace RehtseStudio.PlayerAnimatorController
 {
 
-    public class RS_PlayerAttackController : RS_MonoSingleton<RS_PlayerAttackController>
+    public class RS_PlayerAnimatorController : RS_MonoSingleton<RS_PlayerAnimatorController>
     {
 
         private Animator _anim;
