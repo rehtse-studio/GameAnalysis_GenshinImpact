@@ -12,20 +12,20 @@ namespace RehtseStudio.PlayerSoundEffectsManager
 
         [Header("Swing Attack Sound Effects")]
         [SerializeField] private List<AudioClip> _swordSwingSound = new List<AudioClip>();
-
-        [Header("Footsteps Sound Effects")]
-        [SerializeField] private AudioClip _footstepsSound;
+        [SerializeField] private List<float> _swordSwingSoundVolume = new List<float>();
+        
 
         private void OnEnable()
         {
 
             _audioSource = GetComponent<AudioSource>();
+          
 
         }
 
         public void SwingSwordEffect(int swordIndex)
         {
-            _audioSource.PlayOneShot(_swordSwingSound[swordIndex]);
+            _audioSource.PlayOneShot(_swordSwingSound[swordIndex],_swordSwingSoundVolume[swordIndex]);
         }
 
        

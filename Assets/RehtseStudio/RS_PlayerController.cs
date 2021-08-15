@@ -23,7 +23,13 @@ namespace RehtseStudio.PlayerController
         private Rigidbody _rb;
         private Vector3 _movement;
         private Vector3 _moveDirection;
-        [SerializeField] private float _movementSpeed;
+        [SerializeField] private float _movementSpeed = 0;
+
+        [SerializeField] private LayerMask _groundLayer;
+        [SerializeField] private Transform _ground;
+        [SerializeField] private RaycastHit _raycastHit;
+        [SerializeField] private bool _isPlayerGrounded;
+        private CapsuleCollider _cap;
 
         private Camera _mainCamera;
         private float targetAngle;
@@ -42,7 +48,16 @@ namespace RehtseStudio.PlayerController
         
         private void Update()
         {
-            
+
+            _isPlayerGrounded = Physics.CheckSphere(_ground.position, 0.28f, _groundLayer, QueryTriggerInteraction.Ignore);
+
+            _xInput = RS_InGameInputsManager.Instance.MoveAction().x;
+            _yInput = RS_InGameInputsManager.Instance.MoveAction().y;
+
+            _movement = new Vector3(_xInput, 0, _yInput);
+            _movement.y = _rb.velocity.y;
+            _speed = Mathf.Abs(_xInput) + Mathf.Abs(_yInput);
+
             MovePlayer();
             Attack();
             
@@ -50,13 +65,8 @@ namespace RehtseStudio.PlayerController
       
         private void MovePlayer()
         {
-
-            _xInput = RS_InGameInputsManager.Instance.MoveAction().x;
-            _yInput = RS_InGameInputsManager.Instance.MoveAction().y;
             
-            _movement = new Vector3(_xInput, 0, _yInput);
-            _movement.y = _rb.velocity.y;
-            _speed = Mathf.Abs(_xInput) + Mathf.Abs(_yInput);
+            _movementSpeed = _speed > 0.7 ? 6 : 3;
 
             if (_speed > 0 && _playerAnimatorController.IsPlayerAttacking() == false)
             {
@@ -73,11 +83,21 @@ namespace RehtseStudio.PlayerController
             else
             {
 
-                _rb.velocity = _movement;
+                _rb.velocity = new Vector3(0, _rb.velocity.y, 0);
                
             }
 
-            _playerAnimatorController.Running(_speed);
+            if(_isPlayerGrounded == false)
+            {
+                Jump(true);
+                
+            }
+            else
+            {
+                Jump(false);
+                _playerAnimatorController.Running(_speed);
+            }
+            
 
         }
 
@@ -87,7 +107,26 @@ namespace RehtseStudio.PlayerController
             _playerAnimatorController.Attacking();
 
         }
-        
+
+        private void Jump(bool _jumpingState)
+        {
+            _playerAnimatorController.Jump(_jumpingState);
+        }
+
+
+        //Debuging Section
+        void OnDrawGizmosSelected()
+        {
+            Color transparentGreen = new Color(0.0f, 1.0f, 0.0f, 0.35f);
+            Color transparentRed = new Color(1.0f, 0.0f, 0.0f, 0.35f);
+
+            if (_isPlayerGrounded) Gizmos.color = transparentGreen;
+            else Gizmos.color = transparentRed;
+
+            Gizmos.DrawSphere(_ground.position, 0.28f);
+
+        }
+
     }
 
 }

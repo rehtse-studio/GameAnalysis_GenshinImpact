@@ -14,6 +14,7 @@ namespace RehtseStudio.PlayerAnimatorController
         private int _speedFloatParameterAnim;
         private int _isPlayerAttackingBoolParameterAnim;
         private int _attackTriggerParameterAnim;
+        private int _isPlayerJumpingBoolParameterAnim;
 
         private bool _isPlayerAttacking = false;
         private int _attackClick = 0;
@@ -31,6 +32,7 @@ namespace RehtseStudio.PlayerAnimatorController
         {
             _speedFloatParameterAnim = Animator.StringToHash("Speed");
             _isPlayerAttackingBoolParameterAnim = Animator.StringToHash("isPlayerAttacking");
+            _isPlayerJumpingBoolParameterAnim = Animator.StringToHash("isPlayerJumping");
             _attackTriggerParameterAnim = Animator.StringToHash("Attack_001");
         }
 
@@ -54,6 +56,11 @@ namespace RehtseStudio.PlayerAnimatorController
                 Attack();
             }
 
+        }
+
+        public void Jump(bool _jumpingState)
+        {
+            _anim.SetBool(_isPlayerJumpingBoolParameterAnim,_jumpingState);
         }
 
         public void Attack()
