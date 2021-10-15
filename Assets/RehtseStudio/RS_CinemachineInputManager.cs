@@ -14,11 +14,11 @@ namespace RehtseStudio.CinemachineInputManager
 
         [SerializeField] private GameObject _rsMobileInputUICanvas;
 
-        [SerializeField] private float _touchSensitivityX = 10f;
-        [SerializeField] private float _touchSensitivityY = 10f;
+        private float _touchSensitivityX = 10f;
+        private float _touchSensitivityY = 10f;
 
-        private string TouchXInputMapTo = "Mouse X";
-        private string TouchYInputMapTo = "Mouse Y";
+        private string _touchXInputMapTo = "Mouse X";
+        private string _touchYInputMapTo = "Mouse Y";
 
         private void OnEnable()
         {
@@ -41,18 +41,18 @@ namespace RehtseStudio.CinemachineInputManager
             if(_rsMobileInputUICanvas.activeInHierarchy == false)
             {
 
-                if (axisName == TouchXInputMapTo)
+                if (axisName == _touchXInputMapTo)
                     return RS_InGameInputsManager.Instance.LookAction().x / _touchSensitivityX;
-                if (axisName == TouchYInputMapTo)
+                if (axisName == _touchYInputMapTo)
                     return RS_InGameInputsManager.Instance.LookAction().y / _touchSensitivityY;
 
             }
             else if(_rsMobileInputUICanvas.activeInHierarchy == true)
             {
 
-                if (axisName == TouchXInputMapTo)
+                if (axisName == _touchXInputMapTo)
                     return RS_TouchInputManager.Instance._rsTouchInputVector.x / _touchSensitivityX;
-                if (axisName == TouchYInputMapTo)
+                if (axisName == _touchYInputMapTo)
                     return RS_TouchInputManager.Instance._rsTouchInputVector.y / _touchSensitivityY;
 
             }        
